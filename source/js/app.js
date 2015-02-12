@@ -7,8 +7,8 @@ var myApp = angular.module('myApp', [
 myApp.config(function ($routeProvider) {
     $routeProvider
     .when('/view1', {
-        templateUrl:'templates/view1.html',
-        controller: 'view1Ctrl'
+        templateUrl:'templates/basic-form.html',
+        controller: 'formController'
     })
     .when('/view2', {
         templateUrl:'/templates/view2.html',
