@@ -15,6 +15,6 @@ myApp.config(function ($routeProvider) {
         controller: 'view2Ctrl'
     })
     .otherwise({
-        redirectTo: '/'
+        redirectTo: '/view1'
     });
 });

@@ -13,9 +13,8 @@ $susy: (
 body {
 	-webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-	font-family: sans-serif;
+	font: 16px/1.6em sans-serif;
 	overflow-y: scroll;
-	line-height: 1.6em;
 	color: $text-color-dark;
 	margin: 0;
 }

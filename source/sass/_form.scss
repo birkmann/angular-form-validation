@@ -1,0 +1,33 @@
+form.basic-form {
+	max-width: 350px;
+	margin: 50px auto;
+	input,
+	textarea {
+		font: 1.1em/1.6em sans-serif;
+		color: #aaa;
+		outline: 0 none;
+		width: 100%;
+		padding: 5px 10px;
+		margin: 0 0 10px;
+		border: 1px solid #ccc;
+		border-radius: 3px;
+	}
+	textarea {
+		min-height: 100px;
+	}
+	button {
+		outline: 0 none;
+		cursor: pointer;
+		width: 100%;
+		padding: 5px;
+		border: 0 none;
+		border-radius: 3px;
+		font: 1.3em/1.6em sans-serif;
+		background: #f5f5f5;
+		color: #333;
+		border: 1px solid #ccc;
+		&:hover {
+			background: #e5e5e5;
+		}
+	}
+}
