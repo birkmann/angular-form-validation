@@ -1,15 +1,39 @@
 <div ng-controller="formController">
 
+	<script type="text/ng-template" id="my-custom-messages">
+		<div ng-message="required">This field is required</div>
+		<div ng-message="minlength">This field is too short</div>
+	</script>
+
 	<form 
 		action="" 
 		class="" 
-		name=""
-		novalidate 
+		name="basicForm"
+		novalidate
 		ng-submit="">
 	
-		<input ng-model="user.name" type="text" name="name" placeholder="Name" required>
+		<input 
+			ng-model="user.name" 
+			type="text" 
+			name="name" 
+			placeholder="Name" 
+			required>
+
+		<div ng-messages="basicForm.name.$error" ng-messages-include="my-custom-messages">
+			<div ng-message="required">You did not enter your name</div>
+		</div>
 	
-		<input ng-model="user.email" type="mail" name="mail" placeholder="E-Mail" required>
+		<input 
+			ng-model="user.email"
+			type="email"
+			name="email"
+			placeholder="E-Mail"
+			required>
+
+		<div ng-messages="basicForm.email.$error" ng-messages-include="my-custom-messages">
+			<div ng-message="required">You did not enter your email address</div>
+			<div ng-message="email">Your email address is invalid</div>
+		</div>
 	
 		<textarea name="" placeholder="Message"></textarea>
 	

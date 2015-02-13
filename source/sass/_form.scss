@@ -34,3 +34,15 @@ form {
  		border: 1px solid #ff0000;
 	}
 }
+
+.my-messages {
+	transition: 1s linear all;
+}
+
+.my-messages.ng-active {
+	// messages are visible
+}
+
+.my-messages.ng-inactive {
+	// messages are hidden
+}

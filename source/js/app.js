@@ -1,7 +1,8 @@
 "use strict";
 
 var myApp = angular.module('myApp', [
-    'ngRoute'
+    'ngRoute',
+    'ngMessages'
 ]);
 
 myApp.config(function ($routeProvider) {
