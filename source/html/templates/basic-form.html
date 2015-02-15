@@ -6,29 +6,30 @@
 	</script>
 
 	<form 
-		action="" 
+		action=""
+		method=""
 		class="" 
 		name="basicForm"
 		novalidate
-		ng-submit="">
+		ng-submit="basicForm.$valid && submit()">
 	
 		<input 
-			ng-model="user.name" 
 			type="text" 
 			name="name" 
-			placeholder="Name" 
-			required>
+			placeholder="Name"
+			required
+			ng-model="user.name">
 
 		<div ng-messages="basicForm.name.$error" ng-messages-include="my-custom-messages">
 			<div ng-message="required">You did not enter your name</div>
 		</div>
 	
 		<input 
-			ng-model="user.email"
 			type="email"
 			name="email"
 			placeholder="E-Mail"
-			required>
+			required
+			ng-model="user.email">
 
 		<div ng-messages="basicForm.email.$error" ng-messages-include="my-custom-messages">
 			<div ng-message="required">You did not enter your email address</div>
@@ -38,7 +39,5 @@
 		<textarea name="" placeholder="Message"></textarea>
 	
 		<button type="submit" data-ng-click="">Continue</button>
-	
-	</form>
 
 </div>
