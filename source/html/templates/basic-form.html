@@ -3,12 +3,10 @@
 	<script type="text/ng-template" id="my-custom-messages">
 		<div ng-message="required">This field is required</div>
 		<div ng-message="minlength">This field is too short</div>
+		<div ng-message="maxlength">This field is too long</div>
 	</script>
 
-	<form 
-		action=""
-		method=""
-		class="" 
+	<form
 		name="basicForm"
 		novalidate
 		ng-submit="basicForm.$valid && submit()">
@@ -16,22 +14,30 @@
 		<input 
 			type="text" 
 			name="name" 
-			placeholder="Name"
+			placeholder="Name*"
 			required
-			ng-model="user.name">
+			ng-model="user.name"
+			ng-minlength="3"
+			ng-maxlength="15">
 
-		<div ng-messages="basicForm.name.$error" ng-messages-include="my-custom-messages">
+		<div 
+			ng-messages="basicForm.name.$error"
+			ng-messages-include="my-custom-messages"
+			ng-if="basicForm.$submitted">
 			<div ng-message="required">You did not enter your name</div>
 		</div>
 	
 		<input 
 			type="email"
 			name="email"
-			placeholder="E-Mail"
+			placeholder="E-Mail*"
 			required
 			ng-model="user.email">
 
-		<div ng-messages="basicForm.email.$error" ng-messages-include="my-custom-messages">
+		<div 
+			ng-messages="basicForm.email.$error"
+			ng-messages-include="my-custom-messages"
+			ng-if="basicForm.$submitted">
 			<div ng-message="required">You did not enter your email address</div>
 			<div ng-message="email">Your email address is invalid</div>
 		</div>
@@ -39,5 +45,12 @@
 		<textarea name="" placeholder="Message"></textarea>
 	
 		<button type="submit" data-ng-click="">Continue</button>
+
+		<br>
+		<br>
+
+		<small>
+			* = required
+		</small>
 
 </div>

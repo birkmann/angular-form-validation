@@ -7,7 +7,7 @@ var myApp = angular.module('myApp', [
 
 myApp.config(function ($routeProvider) {
     $routeProvider
-    .when('/view1', {
+    .when('/contact', {
         templateUrl:'templates/basic-form.html',
         controller: 'formController'
     })
@@ -16,6 +16,6 @@ myApp.config(function ($routeProvider) {
         controller: 'view2Ctrl'
     })
     .otherwise({
-        redirectTo: '/view1'
+        redirectTo: '/contact'
     });
 });
